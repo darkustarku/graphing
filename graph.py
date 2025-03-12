@@ -1,25 +1,11 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk 
+import display as dp
 
 root = Tk()
-root.title("pyGraph")
+nodes = {}
 
-MainFrame = ttk.Frame(root, relief="ridge", width=600, height=700)
-
-canvas = Canvas(MainFrame, width=500, height=400, background="gray75")
+window = dp.createWindow(root, 1200, 800, nodes)
 
 
-MainFrame.grid()
-canvas.grid(column=2, row=2)
-
-canvas.create_oval(100, 100, 200, 200, fill="blue", outline="black")
-graph_options = Listbox(canvas, height=3)
-
-for child in MainFrame.winfo_children():
-    child.grid_configure(padx=5, pady=5)
-
-
-
-
-root.mainloop()
-
+window.mainloop()
