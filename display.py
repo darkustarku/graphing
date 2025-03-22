@@ -1,6 +1,11 @@
 from tkinter import *
 from tkinter import ttk
 
+WINDOW_WIDTH = 1200
+WINDOW_HEIGHT = 800
+
+CANVAS_WIDTH = WINDOW_WIDTH - 200
+CANVAS_HEIGHT = WINDOW_HEIGHT - 100 
 
 def drawNode(canvas, node, radius):
     canvas.create_oval(node.x, node.y, node.x + radius, node.y + radius, fill="blue", outline="black")
@@ -23,6 +28,7 @@ def createWindow(root, userWidth, userHeight, circles):
         child.grid_configure(padx=5, pady=5)
 
     return root
+
 
 
 
