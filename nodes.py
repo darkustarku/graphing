@@ -1,18 +1,18 @@
 import random as random
+import numpy as num 
 from display import CANVAS_WIDTH, CANVAS_HEIGHT
 
 class NodeList():
 
     class Node():
 
-        def __init__(self, x, y, value, neighbors):
-            self._x = x
-            self._y = y
+        def __init__(self, coords, value, neighbors):
+            self.coords = coords 
             self._value = value
             self._neighbors = neighbors 
         
         def getCoords(self):
-            return (self._x, self._y)
+            return self.coords
         
         def getValue(self):
             return self.value 
@@ -26,7 +26,8 @@ class NodeList():
             x = random.randint(0, CANVAS_WIDTH)
             y = random.randint(0, CANVAS_HEIGHT)
             neighbors = AdjList[value]
-            new_node = NodeList.Node(x, y, value, neighbors)
+            coords = num.array([x, y])
+            new_node = NodeList.Node(coords, value, neighbors)
             nodelist.append(new_node)
 
         return nodelist
